@@ -3,7 +3,7 @@ namespace car_rental_management.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddVehicleModel : DbMigration
+    public partial class AddVehicles : DbMigration
     {
         public override void Up()
         {
@@ -12,7 +12,7 @@ namespace car_rental_management.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        RegNumber = c.Int(nullable: false),
+                        RegNumber = c.String(),
                         CurrentMileage = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

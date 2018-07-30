@@ -3,7 +3,7 @@ namespace car_rental_management.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddBookingModel : DbMigration
+    public partial class AddBookings : DbMigration
     {
         public override void Up()
         {
