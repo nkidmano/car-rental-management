@@ -30,6 +30,20 @@ namespace car_rental_management.Migrations
                 new Vehicle() { Id = 2, RegNumber = "EFGX 222", CurrentMileage = 126 },
                 new Vehicle() { Id = 3, RegNumber = "HUNV 333", CurrentMileage = 324 }
                 );
+
+            context.Bookings.AddOrUpdate(x => x.Id,
+                new Booking() { Id = 1, DateFrom = DateTime.Now, DateTo = DateTime.Now.AddMonths(2), CustomerId = 1, VehicleId = 1 },
+                new Booking() { Id = 2, DateFrom = DateTime.Now, DateTo = DateTime.Now.AddMonths(4), CustomerId = 1, VehicleId = 2 },
+                new Booking() { Id = 3, DateFrom = DateTime.Now, DateTo = DateTime.Now.AddMonths(3), CustomerId = 2, VehicleId = 3 },
+                new Booking() { Id = 4, DateFrom = DateTime.Now, DateTo = DateTime.Now.AddMonths(5), CustomerId = 2, VehicleId = 2 }
+                );
+
+            context.Invoices.AddOrUpdate(x => x.Id,
+                new Invoice() { Id = 1, InvoiceDate = DateTime.Now, Price = 200, BookingId = 1 },
+                new Invoice() { Id = 2, InvoiceDate = DateTime.Now, Price = 400, BookingId = 2 },
+                new Invoice() { Id = 3, InvoiceDate = DateTime.Now, Price = 300, BookingId = 3 },
+                new Invoice() { Id = 4, InvoiceDate = DateTime.Now, Price = 500, BookingId = 4 }
+                );
         }
     }
 }
