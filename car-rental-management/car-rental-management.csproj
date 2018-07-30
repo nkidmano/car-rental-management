@@ -64,6 +64,10 @@
     <Compile Include="Migrations\201807301219164_AddInvoices.Designer.cs">
       <DependentUpon>201807301219164_AddInvoices.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807301254363_PopulateData.cs" />
+    <Compile Include="Migrations\201807301254363_PopulateData.Designer.cs">
+      <DependentUpon>201807301254363_PopulateData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Form1.cs">
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807301219164_AddInvoices.resx">
       <DependentUpon>201807301219164_AddInvoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807301254363_PopulateData.resx">
+      <DependentUpon>201807301254363_PopulateData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

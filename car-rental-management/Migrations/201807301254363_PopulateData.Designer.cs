@@ -13,7 +13,7 @@ namespace car_rental_management.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201807301221497_PopulateData"; }
+            get { return "201807301254363_PopulateData"; }
         }
         
         string IMigrationMetadata.Source
