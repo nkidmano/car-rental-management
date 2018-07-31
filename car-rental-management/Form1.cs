@@ -16,5 +16,14 @@ namespace car_rental_management
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_car_rentalDataSet.Customers' table. You can move, or remove it, as needed.
+            this.customersTableAdapter.Fill(this._car_rentalDataSet.Customers);
+            // TODO: This line of code loads data into the '_car_rentalDataSet.Customers' table. You can move, or remove it, as needed.
+            this.customersTableAdapter.Fill(this._car_rentalDataSet.Customers);
+
+        }
     }
 }
