@@ -7,6 +7,7 @@ namespace car_rental_management.Migrations
     {
         public override void Up()
         {
+
         }
         
         public override void Down()

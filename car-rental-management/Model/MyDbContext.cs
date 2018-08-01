@@ -10,6 +10,11 @@ namespace car_rental_management
 {
     public class MyDbContext : DbContext
     {
+        public MyDbContext(): base("CarRental")
+        {
+
+        }
+
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<Booking> Bookings { get; set; }
