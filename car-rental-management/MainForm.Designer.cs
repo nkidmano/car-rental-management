@@ -1,6 +1,6 @@
 ﻿namespace car_rental_management
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnShowCars = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnShowCustomers = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._car_rentalDataSet = new car_rental_management._car_rentalDataSet();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
             this.customersTableAdapter = new car_rental_management._car_rentalDataSetTableAdapters.CustomersTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -60,39 +60,38 @@
             this.label1.Text = "QUẢN LÝ XE HƠI";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnShowCars
             // 
-            this.button1.Location = new System.Drawing.Point(24, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Xe";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnShowCars.Location = new System.Drawing.Point(24, 81);
+            this.btnShowCars.Name = "btnShowCars";
+            this.btnShowCars.Size = new System.Drawing.Size(75, 23);
+            this.btnShowCars.TabIndex = 2;
+            this.btnShowCars.Text = "Xe";
+            this.btnShowCars.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRegister
             // 
-            this.button2.Location = new System.Drawing.Point(24, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Đăng ký";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnRegister.Location = new System.Drawing.Point(24, 23);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 3;
+            this.btnRegister.Text = "Đăng ký";
+            this.btnRegister.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnShowCustomers
             // 
-            this.button3.Location = new System.Drawing.Point(24, 52);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Khách hàng";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnShowCustomers.Location = new System.Drawing.Point(24, 52);
+            this.btnShowCustomers.Name = "btnShowCustomers";
+            this.btnShowCustomers.Size = new System.Drawing.Size(75, 23);
+            this.btnShowCustomers.TabIndex = 4;
+            this.btnShowCustomers.Text = "Khách hàng";
+            this.btnShowCustomers.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnRegister);
+            this.groupBox1.Controls.Add(this.btnShowCars);
+            this.groupBox1.Controls.Add(this.btnShowCustomers);
             this.groupBox1.Location = new System.Drawing.Point(12, 83);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(120, 123);
@@ -113,9 +112,9 @@
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(0, 23);
+            this.dataGridView.Location = new System.Drawing.Point(12, 23);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(510, 150);
+            this.dataGridView.Size = new System.Drawing.Size(510, 192);
             this.dataGridView.TabIndex = 0;
             // 
             // customersBindingSource
@@ -130,7 +129,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.btnFind);
             this.groupBox3.Location = new System.Drawing.Point(12, 212);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(120, 100);
@@ -138,31 +137,30 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Điều khiển";
             // 
-            // button4
+            // btnFind
             // 
-            this.button4.Location = new System.Drawing.Point(24, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Tìm kiếm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnFind.Location = new System.Drawing.Point(24, 19);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 23);
+            this.btnFind.TabIndex = 0;
+            this.btnFind.Text = "Tìm kiếm";
+            this.btnFind.UseVisualStyleBackColor = true;
             // 
             // customersTableAdapter
             // 
             this.customersTableAdapter.ClearBeforeFill = true;
             // 
-            // Form1
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 328);
+            this.ClientSize = new System.Drawing.Size(698, 323);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "mainForm";
             this.Text = "CAR RENTAL";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -176,13 +174,13 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnShowCars;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnShowCustomers;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.DataGridView dataGridView;
         private _car_rentalDataSet _car_rentalDataSet;
         private System.Windows.Forms.BindingSource customersBindingSource;

@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarRegisterForm.Designer.cs">
+      <DependentUpon>CarRegisterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201807301132289_AddVehicles.cs" />
     <Compile Include="Migrations\201807301132289_AddVehicles.Designer.cs">
       <DependentUpon>201807301132289_AddVehicles.cs</DependentUpon>
@@ -70,11 +76,11 @@
     </Compile>
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201807291405367_InitialModel.cs" />
     <Compile Include="Migrations\201807291405367_InitialModel.Designer.cs">
@@ -91,8 +97,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_car_rentalDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="CarRegisterForm.resx">
+      <DependentUpon>CarRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807291405367_InitialModel.resx">
       <DependentUpon>201807291405367_InitialModel.cs</DependentUpon>
