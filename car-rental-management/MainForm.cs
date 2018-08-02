@@ -18,38 +18,103 @@ namespace car_rental_management
             InitializeComponent();
         }
 
-        //// TODO: This line of code loads data into the '_car_rentalDataSet.Customers' table. You can move, or remove it, as needed.
-        //this.customersTableAdapter.Fill(this._car_rentalDataSet.Customers);
-        //// TODO: This line of code loads data into the '_car_rentalDataSet.Customers' table. You can move, or remove it, as needed.
-        //this.customersTableAdapter.Fill(this._car_rentalDataSet.Customers);
-
-        //MyDbContext db = new MyDbContext();
-        //var cars = db.Vehicles.ToList();
-
-        //BindingSource source = new BindingSource(cars, null);
-
-        //dataGridView.AutoGenerateColumns = false;
-
-        //    DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
-        //column.HeaderText = "Id";
-        //    column.DataPropertyName = "Id"; // Name of the property in Vehicle
-        //    dataGridView.Columns.Add(column);
-
-        //    DataGridViewTextBoxColumn colorColumn = new DataGridViewTextBoxColumn();
-        //colorColumn.HeaderText = "Registered namba";
-        //    colorColumn.DataPropertyName = "RegNumber"; // Name of the property in Fruit
-        //    dataGridView.Columns.Add(colorColumn);
-
-        //    dataGridView.Columns.Add(new DataGridViewTextBoxColumn
-        //    {
-        //        HeaderText = "Current mileage",
-        //        DataPropertyName = "CurrentMileage"
-        //    });
-
-        //    dataGridView.DataSource = source;
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_car_rentalDataSet.Vehicles' table. You can move, or remove it, as needed.
+            this.vehiclesTableAdapter.Fill(this._car_rentalDataSet.Vehicles);
+            MyDbContext db = new MyDbContext();
 
 
+            // Cars grid view
+            var cars = db.Vehicles.ToList();
 
+            BindingSource carSource = new BindingSource(cars, null);
+
+            carGridView.AutoGenerateColumns = false;
+
+            carGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Số Id",
+                DataPropertyName = "Id"
+            });
+
+            carGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Số xe",
+                DataPropertyName = "RegNumber"
+            });
+
+            carGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Tổng số km đã chạy",
+                DataPropertyName = "CurrentMileage"
+            });
+
+            carGridView.DataSource = carSource;
+
+            //Customers grid view
+            var customers = db.Vehicles.ToList();
+
+            BindingSource customersSource = new BindingSource(cars, null);
+
+            customerGridView.AutoGenerateColumns = false;
+
+            customerGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Số Id",
+                DataPropertyName = "Id"
+            });
+
+            customerGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Họ tên",
+                DataPropertyName = "Name"
+            });
+
+            customerGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Giới tính",
+                DataPropertyName = "Gender"
+            });
+
+            customerGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Email",
+                DataPropertyName = "Email"
+            });
+
+            customerGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Số điện thoại",
+                DataPropertyName = "PhoneNumber"
+            });
+
+            customerGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Địa chỉ",
+                DataPropertyName = "Address"
+            });
+
+
+            customerGridView.DataSource = customersSource;
+
+            //Booking grid view
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            new CarRegisterForm().Show();
+        }
+
+        private void btnNewCar_Click(object sender, EventArgs e)
+        {
+            new AddCarForm().Show();
+        }
+
+        private void btnEditCar_Click(object sender, EventArgs e)
+        {
+            new EditCarForm().Show();
+        }
 
         //MyDbContext db = new MyDbContext();
 

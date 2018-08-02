@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace car_rental_management
 {
-    public partial class CarList : Form
+    public partial class AddCarForm : Form
     {
-        public CarList()
+        public AddCarForm()
         {
             InitializeComponent();
         }

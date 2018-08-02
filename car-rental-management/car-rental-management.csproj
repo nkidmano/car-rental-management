@@ -52,17 +52,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarList.cs">
+    <Compile Include="AddCarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarList.Designer.cs">
-      <DependentUpon>CarList.cs</DependentUpon>
+    <Compile Include="AddCarForm.Designer.cs">
+      <DependentUpon>AddCarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CarRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CarRegisterForm.Designer.cs">
       <DependentUpon>CarRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCarForm.Designer.cs">
+      <DependentUpon>EditCarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201807301132289_AddVehicles.cs" />
     <Compile Include="Migrations\201807301132289_AddVehicles.Designer.cs">
@@ -103,11 +109,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_car_rentalDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CarList.resx">
-      <DependentUpon>CarList.cs</DependentUpon>
+    <EmbeddedResource Include="AddCarForm.resx">
+      <DependentUpon>AddCarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CarRegisterForm.resx">
       <DependentUpon>CarRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCarForm.resx">
+      <DependentUpon>EditCarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
