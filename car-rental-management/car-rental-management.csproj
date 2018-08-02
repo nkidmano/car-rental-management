@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarList.Designer.cs">
+      <DependentUpon>CarList.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_car_rentalDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CarList.resx">
+      <DependentUpon>CarList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CarRegisterForm.resx">
       <DependentUpon>CarRegisterForm.cs</DependentUpon>
     </EmbeddedResource>

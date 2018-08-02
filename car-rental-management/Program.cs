@@ -16,7 +16,7 @@ namespace car_rental_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CarRegisterForm());
+            Application.Run(new mainForm());
         }
     }
 }
