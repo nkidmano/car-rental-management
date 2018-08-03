@@ -36,7 +36,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.carHiredGridView = new System.Windows.Forms.DataGridView();
+            this.bookingsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,20 +55,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookingsTableAdapter = new car_rental_management._car_rentalDataSetTableAdapters.BookingsTableAdapter();
-            this.bookingsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vehiclesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehiclesTableAdapter = new car_rental_management._car_rentalDataSetTableAdapters.VehiclesTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehicleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carHiredGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._car_rentalDataSet)).BeginInit();
             this.notyet.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carHiredGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carGridView)).BeginInit();
@@ -76,8 +71,8 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carHiredGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // customersBindingSource
@@ -139,21 +134,10 @@
             this.btnEdit.Text = "Sửa thông tin";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // carHiredGridView
+            // bookingsBindingSource1
             // 
-            this.carHiredGridView.AutoGenerateColumns = false;
-            this.carHiredGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.carHiredGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.dateFromDataGridViewTextBoxColumn,
-            this.dateToDataGridViewTextBoxColumn,
-            this.customerIdDataGridViewTextBoxColumn,
-            this.vehicleIdDataGridViewTextBoxColumn});
-            this.carHiredGridView.DataSource = this.bookingsBindingSource1;
-            this.carHiredGridView.Location = new System.Drawing.Point(20, 36);
-            this.carHiredGridView.Name = "carHiredGridView";
-            this.carHiredGridView.Size = new System.Drawing.Size(692, 307);
-            this.carHiredGridView.TabIndex = 0;
+            this.bookingsBindingSource1.DataMember = "Bookings";
+            this.bookingsBindingSource1.DataSource = this._car_rentalDataSet;
             // 
             // btnDelete
             // 
@@ -327,11 +311,6 @@
             // 
             this.bookingsTableAdapter.ClearBeforeFill = true;
             // 
-            // bookingsBindingSource1
-            // 
-            this.bookingsBindingSource1.DataMember = "Bookings";
-            this.bookingsBindingSource1.DataSource = this._car_rentalDataSet;
-            // 
             // vehiclesBindingSource
             // 
             this.vehiclesBindingSource.DataMember = "Vehicles";
@@ -341,36 +320,13 @@
             // 
             this.vehiclesTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn
+            // carHiredGridView
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "ass";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateFromDataGridViewTextBoxColumn
-            // 
-            this.dateFromDataGridViewTextBoxColumn.DataPropertyName = "DateFrom";
-            this.dateFromDataGridViewTextBoxColumn.HeaderText = "DateFrom";
-            this.dateFromDataGridViewTextBoxColumn.Name = "dateFromDataGridViewTextBoxColumn";
-            // 
-            // dateToDataGridViewTextBoxColumn
-            // 
-            this.dateToDataGridViewTextBoxColumn.DataPropertyName = "DateTo";
-            this.dateToDataGridViewTextBoxColumn.HeaderText = "DateTo";
-            this.dateToDataGridViewTextBoxColumn.Name = "dateToDataGridViewTextBoxColumn";
-            // 
-            // customerIdDataGridViewTextBoxColumn
-            // 
-            this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerId";
-            this.customerIdDataGridViewTextBoxColumn.HeaderText = "CustomerId";
-            this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
-            // 
-            // vehicleIdDataGridViewTextBoxColumn
-            // 
-            this.vehicleIdDataGridViewTextBoxColumn.DataPropertyName = "VehicleId";
-            this.vehicleIdDataGridViewTextBoxColumn.HeaderText = "VehicleId";
-            this.vehicleIdDataGridViewTextBoxColumn.Name = "vehicleIdDataGridViewTextBoxColumn";
+            this.carHiredGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.carHiredGridView.Location = new System.Drawing.Point(20, 36);
+            this.carHiredGridView.Name = "carHiredGridView";
+            this.carHiredGridView.Size = new System.Drawing.Size(692, 307);
+            this.carHiredGridView.TabIndex = 0;
             // 
             // mainForm
             // 
@@ -387,7 +343,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.carHiredGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -397,8 +353,8 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carHiredGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,7 +367,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView carHiredGridView;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage3;
@@ -434,10 +389,7 @@
         private System.Windows.Forms.BindingSource vehiclesBindingSource;
         private _car_rentalDataSetTableAdapters.VehiclesTableAdapter vehiclesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateFromDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateToDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vehicleIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView carHiredGridView;
     }
 }
 

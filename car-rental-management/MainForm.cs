@@ -20,10 +20,7 @@ namespace car_rental_management
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_car_rentalDataSet.Vehicles' table. You can move, or remove it, as needed.
-            this.vehiclesTableAdapter.Fill(this._car_rentalDataSet.Vehicles);
             MyDbContext db = new MyDbContext();
-
 
             // Cars grid view
             var cars = db.Vehicles.ToList();
@@ -99,6 +96,49 @@ namespace car_rental_management
             customerGridView.DataSource = customersSource;
 
             //Booking grid view
+            var bookings = db.Bookings.ToList();
+
+            BindingSource carHiredsource = new BindingSource(bookings, null);
+
+            carHiredGridView.AutoGenerateColumns = false;
+
+            carHiredGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Số Id",
+                DataPropertyName = "Id"
+            });
+
+            carHiredGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Từ ngày",
+                DataPropertyName = "DateFrom"
+            });
+
+            carHiredGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Đến ngày",
+                DataPropertyName = "DateTo"
+            });
+
+            carHiredGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Tên khách hàng",
+                DataPropertyName = "CustomerName"
+            });
+
+            carHiredGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Số điện thoại",
+                DataPropertyName = "CustomerPhoneNumber"
+            });
+
+            carHiredGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Địa chỉ",
+                DataPropertyName = "CustomerAddress"
+            });
+
+            carHiredGridView.DataSource = carHiredsource;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
