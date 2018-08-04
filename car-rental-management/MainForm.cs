@@ -58,9 +58,9 @@ namespace car_rental_management
             carGridView.DataSource = carSource;
 
             //Customers grid view
-            var customers = db.Vehicles.ToList();
+            var customers = db.Customers.ToList();
 
-            BindingSource customersSource = new BindingSource(cars, null);
+            BindingSource customersSource = new BindingSource(customers, null);
 
             customerGridView.AutoGenerateColumns = false;
 
@@ -142,8 +142,8 @@ namespace car_rental_management
 
             carHiredGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
-                HeaderText = "Địa chỉ",
-                DataPropertyName = "CustomerAddress"
+                HeaderText = "Số xe đăng ký thuê",
+                DataPropertyName = "VehicleRegNumber"
             });
 
             carHiredGridView.DataSource = carHiredsource;
@@ -176,6 +176,20 @@ namespace car_rental_management
             var carInDB = db.Vehicles.SingleOrDefault(c => c.Id == selectedCarId);
 
             db.Vehicles.Remove(carInDB);
+            db.SaveChanges();
+        }
+
+        private void btnRemoveCustomer_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in customerGridView.SelectedRows)
+            {
+                customerGridView.Rows.RemoveAt(row.Index);
+            }
+
+            int selectedCarId = (int)customerGridView.CurrentRow.Cells[0].Value;
+            var customerInDB = db.Customers.SingleOrDefault(c => c.Id == selectedCarId);
+
+            db.Customers.Remove(customerInDB);
             db.SaveChanges();
         }
 

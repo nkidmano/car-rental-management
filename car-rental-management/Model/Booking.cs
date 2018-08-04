@@ -35,17 +35,17 @@ namespace car_rental_management.Model
             }
         }
 
+        public int VehicleId { get; set; }
+        public Vehicle Vehicle { get; set; }
+
         [NotMapped]
-        public string CustomerAddress
+        public string VehicleRegNumber
         {
             get
             {
-                return Customer.Address;
+                return Vehicle.RegNumber;
             }
         }
-
-        public int VehicleId { get; set; }
-        public Vehicle Vehicle { get; set; }
 
         public ICollection<Invoice> Invoice { get; set; }
     }

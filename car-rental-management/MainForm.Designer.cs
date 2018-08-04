@@ -49,9 +49,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnEditCustomer = new System.Windows.Forms.Button();
             this.customerGridView = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnRemoveCustomer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.bookingsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -260,9 +260,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.btnEditCustomer);
             this.groupBox3.Controls.Add(this.customerGridView);
-            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.btnRemoveCustomer);
             this.groupBox3.Location = new System.Drawing.Point(15, 72);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(738, 392);
@@ -270,14 +270,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin chung";
             // 
-            // button4
+            // btnEditCustomer
             // 
-            this.button4.Location = new System.Drawing.Point(539, 355);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Sửa thông tin";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnEditCustomer.Location = new System.Drawing.Point(539, 355);
+            this.btnEditCustomer.Name = "btnEditCustomer";
+            this.btnEditCustomer.Size = new System.Drawing.Size(84, 23);
+            this.btnEditCustomer.TabIndex = 12;
+            this.btnEditCustomer.Text = "Sửa thông tin";
+            this.btnEditCustomer.UseVisualStyleBackColor = true;
             // 
             // customerGridView
             // 
@@ -287,14 +287,15 @@
             this.customerGridView.Size = new System.Drawing.Size(692, 307);
             this.customerGridView.TabIndex = 0;
             // 
-            // button5
+            // btnRemoveCustomer
             // 
-            this.button5.Location = new System.Drawing.Point(629, 355);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 23);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Xóa thông tin";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnRemoveCustomer.Location = new System.Drawing.Point(629, 355);
+            this.btnRemoveCustomer.Name = "btnRemoveCustomer";
+            this.btnRemoveCustomer.Size = new System.Drawing.Size(84, 23);
+            this.btnRemoveCustomer.TabIndex = 11;
+            this.btnRemoveCustomer.Text = "Xóa thông tin";
+            this.btnRemoveCustomer.UseVisualStyleBackColor = true;
+            this.btnRemoveCustomer.Click += new System.EventHandler(this.btnRemoveCustomer_Click);
             // 
             // label3
             // 
@@ -386,9 +387,9 @@
         private System.Windows.Forms.Button btnNewCar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEditCustomer;
         private System.Windows.Forms.DataGridView customerGridView;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnRemoveCustomer;
         private System.Windows.Forms.BindingSource bookingsBindingSource;
         private _car_rentalDataSetTableAdapters.BookingsTableAdapter bookingsTableAdapter;
         private System.Windows.Forms.BindingSource bookingsBindingSource1;
