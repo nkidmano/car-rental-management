@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtRegNumber = new System.Windows.Forms.TextBox();
+            this.txtCurMil = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -54,50 +54,52 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Số km đã chạy";
             // 
-            // textBox1
+            // txtRegNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtRegNumber.Location = new System.Drawing.Point(113, 30);
+            this.txtRegNumber.Name = "txtRegNumber";
+            this.txtRegNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtRegNumber.TabIndex = 2;
             // 
-            // textBox2
+            // txtCurMil
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtCurMil.Location = new System.Drawing.Point(113, 63);
+            this.txtCurMil.Name = "txtCurMil";
+            this.txtCurMil.Size = new System.Drawing.Size(100, 20);
+            this.txtCurMil.TabIndex = 3;
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(41, 103);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(41, 103);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.Location = new System.Drawing.Point(123, 103);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Hủy bỏ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(123, 103);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Hủy bỏ";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // AddCar
+            // AddCarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(241, 147);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtCurMil);
+            this.Controls.Add(this.txtRegNumber);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AddCar";
+            this.Name = "AddCarForm";
             this.Text = "Thêm Xe Mới";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -108,9 +110,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtRegNumber;
+        private System.Windows.Forms.TextBox txtCurMil;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnClose;
     }
 }

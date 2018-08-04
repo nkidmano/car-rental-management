@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,14 +14,21 @@ namespace car_rental_management
 {
     public partial class mainForm : Form
     {
+        MyDbContext db = new MyDbContext();
+
         public mainForm()
         {
             InitializeComponent();
         }
 
+        public void RefreshForm()
+        {
+            carGridView.Refresh();
+            carGridView.Invalidate();
+        }
+
         private void mainForm_Load(object sender, EventArgs e)
         {
-            MyDbContext db = new MyDbContext();
 
             // Cars grid view
             var cars = db.Vehicles.ToList();
@@ -139,6 +147,7 @@ namespace car_rental_management
             });
 
             carHiredGridView.DataSource = carHiredsource;
+
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -154,6 +163,20 @@ namespace car_rental_management
         private void btnEditCar_Click(object sender, EventArgs e)
         {
             new EditCarForm().Show();
+        }
+
+        private void btnRemoveCar_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in carGridView.SelectedRows)
+            {
+                carGridView.Rows.RemoveAt(row.Index);
+            }
+
+            int selectedCarId = (int)carGridView.CurrentRow.Cells[0].Value;
+            var carInDB = db.Vehicles.SingleOrDefault(c => c.Id == selectedCarId);
+
+            db.Vehicles.Remove(carInDB);
+            db.SaveChanges();
         }
 
         //MyDbContext db = new MyDbContext();

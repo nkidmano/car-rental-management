@@ -36,7 +36,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.bookingsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.carHiredGridView = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEditCar = new System.Windows.Forms.Button();
             this.carGridView = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRemoveCar = new System.Windows.Forms.Button();
             this.btnNewCar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -53,26 +53,27 @@
             this.customerGridView = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.bookingsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bookingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookingsTableAdapter = new car_rental_management._car_rentalDataSetTableAdapters.BookingsTableAdapter();
             this.vehiclesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehiclesTableAdapter = new car_rental_management._car_rentalDataSetTableAdapters.VehiclesTableAdapter();
-            this.carHiredGridView = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._car_rentalDataSet)).BeginInit();
             this.notyet.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carHiredGridView)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carGridView)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carHiredGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // customersBindingSource
@@ -134,10 +135,13 @@
             this.btnEdit.Text = "Sửa thông tin";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // bookingsBindingSource1
+            // carHiredGridView
             // 
-            this.bookingsBindingSource1.DataMember = "Bookings";
-            this.bookingsBindingSource1.DataSource = this._car_rentalDataSet;
+            this.carHiredGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.carHiredGridView.Location = new System.Drawing.Point(20, 36);
+            this.carHiredGridView.Name = "carHiredGridView";
+            this.carHiredGridView.Size = new System.Drawing.Size(692, 307);
+            this.carHiredGridView.TabIndex = 0;
             // 
             // btnDelete
             // 
@@ -185,7 +189,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnEditCar);
             this.groupBox1.Controls.Add(this.carGridView);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnRemoveCar);
             this.groupBox1.Controls.Add(this.btnNewCar);
             this.groupBox1.Location = new System.Drawing.Point(15, 70);
             this.groupBox1.Name = "groupBox1";
@@ -212,14 +216,15 @@
             this.carGridView.Size = new System.Drawing.Size(692, 307);
             this.carGridView.TabIndex = 0;
             // 
-            // button2
+            // btnRemoveCar
             // 
-            this.button2.Location = new System.Drawing.Point(629, 355);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Xóa thông tin";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRemoveCar.Location = new System.Drawing.Point(629, 355);
+            this.btnRemoveCar.Name = "btnRemoveCar";
+            this.btnRemoveCar.Size = new System.Drawing.Size(84, 23);
+            this.btnRemoveCar.TabIndex = 11;
+            this.btnRemoveCar.Text = "Xóa thông tin";
+            this.btnRemoveCar.UseVisualStyleBackColor = true;
+            this.btnRemoveCar.Click += new System.EventHandler(this.btnRemoveCar_Click);
             // 
             // btnNewCar
             // 
@@ -302,6 +307,11 @@
             this.label3.Text = "DANH SÁCH KHÁCH HÀNG";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // bookingsBindingSource1
+            // 
+            this.bookingsBindingSource1.DataMember = "Bookings";
+            this.bookingsBindingSource1.DataSource = this._car_rentalDataSet;
+            // 
             // bookingsBindingSource
             // 
             this.bookingsBindingSource.DataMember = "Bookings";
@@ -320,13 +330,9 @@
             // 
             this.vehiclesTableAdapter.ClearBeforeFill = true;
             // 
-            // carHiredGridView
+            // timer1
             // 
-            this.carHiredGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.carHiredGridView.Location = new System.Drawing.Point(20, 36);
-            this.carHiredGridView.Name = "carHiredGridView";
-            this.carHiredGridView.Size = new System.Drawing.Size(692, 307);
-            this.carHiredGridView.TabIndex = 0;
+            this.timer1.Interval = 1000;
             // 
             // mainForm
             // 
@@ -343,7 +349,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carHiredGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -352,9 +358,9 @@
             this.tabPage3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carHiredGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,7 +382,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnEditCar;
         private System.Windows.Forms.DataGridView carGridView;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRemoveCar;
         private System.Windows.Forms.Button btnNewCar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -388,8 +394,9 @@
         private System.Windows.Forms.BindingSource bookingsBindingSource1;
         private System.Windows.Forms.BindingSource vehiclesBindingSource;
         private _car_rentalDataSetTableAdapters.VehiclesTableAdapter vehiclesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView carHiredGridView;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

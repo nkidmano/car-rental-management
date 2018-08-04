@@ -1,4 +1,5 @@
-﻿using System;
+﻿using car_rental_management.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,30 @@ namespace car_rental_management
         public AddCarForm()
         {
             InitializeComponent();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            MyDbContext db = new MyDbContext();
+
+            var car = new Vehicle
+            {
+                RegNumber = txtRegNumber.Text,
+                CurrentMileage = int.Parse(txtCurMil.Text)
+            };
+
+            db.Vehicles.Add(car);
+            db.SaveChanges();
+
+            mainForm form = new mainForm();
+            form.RefreshForm();
+
+            Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
