@@ -26,6 +26,10 @@ namespace car_rental_management
 
             comboRegNumber.DataSource = vehi.ToList();
             comboRegNumber.DisplayMember = "RegNumber";
+
+            dateFrom.MinDate = DateTime.Now.AddDays(14);
+            dateTo.MinDate = DateTime.Now.AddMonths(1);
+            dateFrom.Enabled = false;
         }
 
 
@@ -51,27 +55,83 @@ namespace car_rental_management
                 Address = address
             };
 
-            db.Customers.Add(customer);
-            db.SaveChanges();
+            var isCustomerInDB = db.Customers.SingleOrDefault(c => c.Name == name);
+
+            if (isCustomerInDB == null)
+            {
+                db.Customers.Add(customer);
+                db.SaveChanges();
+            }
 
             var CustomerInDB = db.Customers.SingleOrDefault(c => c.Name == name);
             var CustomerId = CustomerInDB.Id;
 
-            var booking = new Booking
+            var booking = new Booking    
             {
-                DateFrom = dateFrom.Value,
-                DateTo = dateTo.Value,
+                DateFrom = dateFrom.Value.Date,
+                DateTo = dateTo.Value.Date,
                 CustomerId = CustomerId,
                 VehicleId = VehicleId
             };
 
             db.Bookings.Add(booking);
             db.SaveChanges();
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void comboRegNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtCurMileage.Text = db.Vehicles.SingleOrDefault(v => v.RegNumber == comboRegNumber.Text).CurrentMileage.ToString();
+        }
+
+        private void dateTo_ValueChanged(object sender, EventArgs e)
+        {
+            var moneyPerDay = 1500000;
+
+            var hiredDay = dateTo.Value - dateFrom.Value;
+            int totalMoney = (int)hiredDay.TotalDays * moneyPerDay;
+
+            txtTotalMoney.Text = totalMoney.ToString() + " VND";
+        }
+
+        private void dateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            var moneyPerDay = 1500000;
+
+            var hiredDay = dateTo.Value - dateFrom.Value;
+            int totalMoney = (int)hiredDay.TotalDays * moneyPerDay;
+
+            txtTotalMoney.Text = totalMoney.ToString() + " VND";
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            var customerInDB = db.Customers.SingleOrDefault(c => c.Name == txtName.Text);
+
+            if (customerInDB != null)
+            {
+                txtName.Text = customerInDB.Name;
+                txtEmail.Text = customerInDB.Email;
+                txtPhoneNumber.Text = customerInDB.PhoneNumber.ToString()   ;
+                txtAddress.Text = customerInDB.Address;
+                if (customerInDB.Gender)
+                    radioMale.Checked = true;
+                else
+                    radioFemale.Checked = true;
+                txtName.Focus();
+            }
+            else
+            {
+                txtEmail.Text = "";
+                txtPhoneNumber.Text = "";
+                txtAddress.Text = "";
+                radioMale.Checked = true;
+            }
         }
     }
 }

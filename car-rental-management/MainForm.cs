@@ -183,6 +183,11 @@ namespace car_rental_management
             db.SaveChanges();
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //MyDbContext db = new MyDbContext();
 
         //var car = new Vehicle

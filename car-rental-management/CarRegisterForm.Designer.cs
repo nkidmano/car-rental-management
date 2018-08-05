@@ -122,6 +122,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(200, 20);
             this.txtName.TabIndex = 7;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtEmail
             // 
@@ -159,6 +160,7 @@
             this.comboRegNumber.Name = "comboRegNumber";
             this.comboRegNumber.Size = new System.Drawing.Size(200, 21);
             this.comboRegNumber.TabIndex = 13;
+            this.comboRegNumber.SelectedIndexChanged += new System.EventHandler(this.comboRegNumber_SelectedIndexChanged);
             // 
             // radioMale
             // 
@@ -205,10 +207,12 @@
             // 
             // dateFrom
             // 
+            this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateFrom.Location = new System.Drawing.Point(110, 202);
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(200, 20);
             this.dateFrom.TabIndex = 18;
+            this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
             // label8
             // 
@@ -221,10 +225,12 @@
             // 
             // dateTo
             // 
+            this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTo.Location = new System.Drawing.Point(110, 228);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(200, 20);
             this.dateTo.TabIndex = 20;
+            this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
             // label9
             // 
