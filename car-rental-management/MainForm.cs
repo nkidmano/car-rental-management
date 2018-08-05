@@ -167,11 +167,6 @@ namespace car_rental_management
 
         private void btnRemoveCar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in carGridView.SelectedRows)
-            {
-                carGridView.Rows.RemoveAt(row.Index);
-            }
-
             int selectedCarId = (int)carGridView.CurrentRow.Cells[0].Value;
             var carInDB = db.Vehicles.SingleOrDefault(c => c.Id == selectedCarId);
 
@@ -181,13 +176,8 @@ namespace car_rental_management
 
         private void btnRemoveCustomer_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in customerGridView.SelectedRows)
-            {
-                customerGridView.Rows.RemoveAt(row.Index);
-            }
-
-            int selectedCarId = (int)customerGridView.CurrentRow.Cells[0].Value;
-            var customerInDB = db.Customers.SingleOrDefault(c => c.Id == selectedCarId);
+            int selectedCustomerId = (int)customerGridView.CurrentRow.Cells[0].Value;
+            var customerInDB = db.Customers.SingleOrDefault(c => c.Id == selectedCustomerId);
 
             db.Customers.Remove(customerInDB);
             db.SaveChanges();

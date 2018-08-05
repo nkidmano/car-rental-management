@@ -41,8 +41,8 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtCurMileage = new System.Windows.Forms.TextBox();
             this.comboRegNumber = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioMale = new System.Windows.Forms.RadioButton();
+            this.radioFemale = new System.Windows.Forms.RadioButton();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
@@ -160,27 +160,28 @@
             this.comboRegNumber.Size = new System.Drawing.Size(200, 21);
             this.comboRegNumber.TabIndex = 13;
             // 
-            // radioButton1
+            // radioMale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(124, 46);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 17);
-            this.radioButton1.TabIndex = 14;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioMale.AutoSize = true;
+            this.radioMale.Checked = true;
+            this.radioMale.Location = new System.Drawing.Point(124, 46);
+            this.radioMale.Name = "radioMale";
+            this.radioMale.Size = new System.Drawing.Size(47, 17);
+            this.radioMale.TabIndex = 14;
+            this.radioMale.TabStop = true;
+            this.radioMale.Text = "Nam";
+            this.radioMale.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioFemale
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(177, 46);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 15;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioFemale.AutoSize = true;
+            this.radioFemale.Location = new System.Drawing.Point(177, 46);
+            this.radioFemale.Name = "radioFemale";
+            this.radioFemale.Size = new System.Drawing.Size(39, 17);
+            this.radioFemale.TabIndex = 15;
+            this.radioFemale.TabStop = true;
+            this.radioFemale.Text = "Nữ";
+            this.radioFemale.UseVisualStyleBackColor = true;
             // 
             // btnRegister
             // 
@@ -190,6 +191,7 @@
             this.btnRegister.TabIndex = 16;
             this.btnRegister.Text = "Đăng Ký";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnCancel
             // 
@@ -199,6 +201,7 @@
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Hủy Bỏ";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dateFrom
             // 
@@ -262,8 +265,8 @@
             this.Controls.Add(this.dateFrom);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioFemale);
+            this.Controls.Add(this.radioMale);
             this.Controls.Add(this.comboRegNumber);
             this.Controls.Add(this.txtCurMileage);
             this.Controls.Add(this.txtAddress);
@@ -279,6 +282,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CarRegisterForm";
             this.Text = "Đăng Ký Thuê Xe";
+            this.Load += new System.EventHandler(this.CarRegisterForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,8 +303,8 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtCurMileage;
         private System.Windows.Forms.ComboBox comboRegNumber;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioMale;
+        private System.Windows.Forms.RadioButton radioFemale;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DateTimePicker dateFrom;
