@@ -64,11 +64,23 @@
     <Compile Include="CarRegisterForm.Designer.cs">
       <DependentUpon>CarRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditBookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditBookingForm.Designer.cs">
+      <DependentUpon>EditBookingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditCarForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditCarForm.Designer.cs">
       <DependentUpon>EditCarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCustomerForm.Designer.cs">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201807301132289_AddVehicles.cs" />
     <Compile Include="Migrations\201807301132289_AddVehicles.Designer.cs">
@@ -102,12 +114,6 @@
     <Compile Include="Model\Invoice.cs" />
     <Compile Include="Model\MyDbContext.cs" />
     <Compile Include="Model\Vehicle.cs" />
-    <Compile Include="NewBooking.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NewBooking.Designer.cs">
-      <DependentUpon>NewBooking.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_car_rentalDataSet.Designer.cs">
@@ -121,8 +127,14 @@
     <EmbeddedResource Include="CarRegisterForm.resx">
       <DependentUpon>CarRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditBookingForm.resx">
+      <DependentUpon>EditBookingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditCarForm.resx">
       <DependentUpon>EditCarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCustomerForm.resx">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -141,9 +153,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807301505307_PopulateCustomersAndVehicles.resx">
       <DependentUpon>201807301505307_PopulateCustomersAndVehicles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewBooking.resx">
-      <DependentUpon>NewBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

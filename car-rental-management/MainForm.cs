@@ -162,7 +162,8 @@ namespace car_rental_management
 
         private void btnEditCar_Click(object sender, EventArgs e)
         {
-            new EditCarForm().Show();
+            EditCarForm editCarForm = new EditCarForm((int)carGridView.CurrentRow.Cells[0].Value);
+            editCarForm.Show();
         }
 
         private void btnRemoveCar_Click(object sender, EventArgs e)
@@ -185,7 +186,23 @@ namespace car_rental_management
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            int selectedBookingId = (int)carHiredGridView.CurrentRow.Cells[0].Value;
+            var bookingInDB = db.Bookings.SingleOrDefault(c => c.Id == selectedBookingId);
 
+            db.Bookings.Remove(bookingInDB);
+            db.SaveChanges();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            EditBookingForm editBookingForm = new EditBookingForm((int)carHiredGridView.CurrentRow.Cells[0].Value);
+            editBookingForm.Show();
+        }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            EditCustomerForm editCustomerForm = new EditCustomerForm((int)customerGridView.CurrentRow.Cells[0].Value);
+            editCustomerForm.Show();
         }
 
         //MyDbContext db = new MyDbContext();

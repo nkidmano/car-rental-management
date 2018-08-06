@@ -134,9 +134,11 @@
             this.btnEdit.TabIndex = 12;
             this.btnEdit.Text = "Sửa thông tin";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // carHiredGridView
             // 
+            this.carHiredGridView.AllowUserToDeleteRows = false;
             this.carHiredGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.carHiredGridView.Location = new System.Drawing.Point(20, 36);
             this.carHiredGridView.Name = "carHiredGridView";
@@ -279,6 +281,7 @@
             this.btnEditCustomer.TabIndex = 12;
             this.btnEditCustomer.Text = "Sửa thông tin";
             this.btnEditCustomer.UseVisualStyleBackColor = true;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // customerGridView
             // 
