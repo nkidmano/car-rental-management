@@ -13,6 +13,6 @@ namespace car_rental_management.Model
         public int Price { get; set; }
 
         public int BookingId { get; set; }
-        public Booking Booking { get; set; }
+        public virtual Booking Booking { get; set; }
     }
 }

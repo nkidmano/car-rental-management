@@ -35,6 +35,7 @@
             this.notyet = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnInvoice = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.carHiredGridView = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -115,6 +116,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnInvoice);
             this.groupBox2.Controls.Add(this.btnEdit);
             this.groupBox2.Controls.Add(this.carHiredGridView);
             this.groupBox2.Controls.Add(this.btnDelete);
@@ -125,6 +127,16 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chung";
+            // 
+            // btnInvoice
+            // 
+            this.btnInvoice.Location = new System.Drawing.Point(350, 355);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Size = new System.Drawing.Size(93, 23);
+            this.btnInvoice.TabIndex = 13;
+            this.btnInvoice.Text = "Xem hóa đơn";
+            this.btnInvoice.UseVisualStyleBackColor = true;
+            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
             // 
             // btnEdit
             // 
@@ -402,6 +414,7 @@
         //private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView carHiredGridView;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnInvoice;
     }
 }
 

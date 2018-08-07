@@ -205,6 +205,12 @@ namespace car_rental_management
             editCustomerForm.Show();
         }
 
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            InvoiceForm invoiceForm = new InvoiceForm((int)carHiredGridView.CurrentRow.Cells[0].Value);
+            invoiceForm.Show();
+        }
+
         //MyDbContext db = new MyDbContext();
 
         //var car = new Vehicle

@@ -76,6 +76,21 @@ namespace car_rental_management
 
             db.Bookings.Add(booking);
             db.SaveChanges();
+
+            var BookingInDB = db.Bookings.FirstOrDefault(b => b.CustomerId == CustomerId && b.VehicleId == VehicleId);
+            var BookingId = BookingInDB.Id;
+            var price = int.Parse(txtTotalMoney.Text);
+
+            var invoice = new Invoice
+            {
+                InvoiceDate = DateTime.Now.Date,
+                Price = price,
+                BookingId = BookingId
+            };
+ 
+            db.Invoices.Add(invoice);
+            db.SaveChanges();
+
             Close();
         }
 
@@ -96,7 +111,7 @@ namespace car_rental_management
             var hiredDay = dateTo.Value - dateFrom.Value;
             int totalMoney = (int)hiredDay.TotalDays * moneyPerDay;
 
-            txtTotalMoney.Text = totalMoney.ToString() + " VND";
+            txtTotalMoney.Text = totalMoney.ToString();
         }
 
         private void dateFrom_ValueChanged(object sender, EventArgs e)
@@ -106,7 +121,7 @@ namespace car_rental_management
             var hiredDay = dateTo.Value - dateFrom.Value;
             int totalMoney = (int)hiredDay.TotalDays * moneyPerDay;
 
-            txtTotalMoney.Text = totalMoney.ToString() + " VND";
+            txtTotalMoney.Text = totalMoney.ToString();
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
