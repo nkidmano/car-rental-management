@@ -20,6 +20,16 @@ namespace car_rental_management
             InitializeComponent();
         }
 
+        private void CalculateBookingMoney()
+        {
+            var moneyPerDay = 1500000;
+
+            var hiredDay = dateTo.Value - dateFrom.Value;
+            int totalMoney = (int)hiredDay.TotalDays * moneyPerDay;
+
+            txtTotalMoney.Text = totalMoney.ToString();
+        }
+
         private void CarRegisterForm_Load(object sender, EventArgs e)
         {
             var vehi = from vehicle in db.Vehicles select vehicle;
@@ -27,9 +37,8 @@ namespace car_rental_management
             comboRegNumber.DataSource = vehi.ToList();
             comboRegNumber.DisplayMember = "RegNumber";
 
-            dateFrom.MinDate = DateTime.Now.AddDays(14);
-            dateTo.MinDate = DateTime.Now.AddMonths(1);
-            dateFrom.Enabled = false;
+            dateFrom.MinDate = DateTime.Now;
+            dateTo.MinDate = dateFrom.Value.AddMonths(1);
         }
 
 
@@ -106,22 +115,16 @@ namespace car_rental_management
 
         private void dateTo_ValueChanged(object sender, EventArgs e)
         {
-            var moneyPerDay = 1500000;
-
-            var hiredDay = dateTo.Value - dateFrom.Value;
-            int totalMoney = (int)hiredDay.TotalDays * moneyPerDay;
-
-            txtTotalMoney.Text = totalMoney.ToString();
+            CalculateBookingMoney();
         }
 
         private void dateFrom_ValueChanged(object sender, EventArgs e)
         {
-            var moneyPerDay = 1500000;
+            dateTo.MinDate = dateFrom.Value.AddMonths(1);
+            CalculateBookingMoney();
 
-            var hiredDay = dateTo.Value - dateFrom.Value;
-            int totalMoney = (int)hiredDay.TotalDays * moneyPerDay;
-
-            txtTotalMoney.Text = totalMoney.ToString();
+            // get a LIST booking id base on car reg number
+            // get datefrom, date to
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
