@@ -151,5 +151,19 @@ namespace car_rental_management
                 radioMale.Checked = true;
             }
         }
+
+        private void btnTesting_Click(object sender, EventArgs e)
+        {
+            var regNumber = comboRegNumber.Text;
+            var vehicleInDB = db.Vehicles.SingleOrDefault(v => v.RegNumber == regNumber);
+            var vehicleId = vehicleInDB.Id;
+
+            var bookingIDs = db.Bookings.Where(b => b.VehicleId == vehicleId);
+            //var bookingId = bookingInDB.Id;
+            foreach (var bookingId in bookingIDs)
+            {
+                MessageBox.Show(bookingId.Id.ToString());
+            }
+        }
     }
 }

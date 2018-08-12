@@ -60,6 +60,7 @@
             this.vehiclesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehiclesTableAdapter = new car_rental_management._car_rentalDataSetTableAdapters.VehiclesTableAdapter();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnTesting = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._car_rentalDataSet)).BeginInit();
             this.notyet.SuspendLayout();
@@ -116,6 +117,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnTesting);
             this.groupBox2.Controls.Add(this.btnInvoice);
             this.groupBox2.Controls.Add(this.btnEdit);
             this.groupBox2.Controls.Add(this.carHiredGridView);
@@ -351,6 +353,15 @@
             // 
             this.timer1.Interval = 1000;
             // 
+            // btnTesting
+            // 
+            this.btnTesting.Location = new System.Drawing.Point(269, 355);
+            this.btnTesting.Name = "btnTesting";
+            this.btnTesting.Size = new System.Drawing.Size(75, 23);
+            this.btnTesting.TabIndex = 14;
+            this.btnTesting.Text = "Testing";
+            this.btnTesting.UseVisualStyleBackColor = true;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,6 +426,7 @@
         private System.Windows.Forms.DataGridView carHiredGridView;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnInvoice;
+        private System.Windows.Forms.Button btnTesting;
     }
 }
 
