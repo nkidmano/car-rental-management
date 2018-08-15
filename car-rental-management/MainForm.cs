@@ -164,6 +164,8 @@ namespace car_rental_management
         {
             EditCarForm editCarForm = new EditCarForm((int)carGridView.CurrentRow.Cells[0].Value);
             editCarForm.Show();
+
+
         }
 
         private void btnRemoveCar_Click(object sender, EventArgs e)
@@ -191,6 +193,12 @@ namespace car_rental_management
 
             db.Bookings.Remove(bookingInDB);
             db.SaveChanges();
+
+            var bookings = db.Bookings.ToList();
+
+            BindingSource carHiredsource = new BindingSource(bookings, null);
+
+            carHiredGridView.DataSource = carHiredsource;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
