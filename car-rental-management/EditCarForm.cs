@@ -16,16 +16,20 @@ namespace car_rental_management
 
         public int carId { get; set; }
 
+        public DataGridView carGridView { get; set; }
+
         public EditCarForm()
         {
             InitializeComponent();
         }
 
-        public EditCarForm(int id)
+        public EditCarForm(int id, DataGridView gridview)
         {
             InitializeComponent();
 
             carId = id;
+
+            carGridView = gridview;
 
             var carInBD = db.Vehicles.SingleOrDefault(c => c.Id == carId);
 
@@ -44,6 +48,10 @@ namespace car_rental_management
             carInBD.RegNumber = txtRegNumber.Text;
             carInBD.CurrentMileage = int.Parse(txtCurMil.Text);
             db.SaveChanges();
+
+            var vehicles = db.Vehicles.ToList();
+            BindingSource vehicleSource = new BindingSource(vehicles, null);
+            carGridView.DataSource = vehicleSource;
 
             Close();
         }

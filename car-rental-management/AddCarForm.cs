@@ -13,14 +13,23 @@ namespace car_rental_management
 {
     public partial class AddCarForm : Form
     {
+        public DataGridView carGridView { get; set; }
+
         public AddCarForm()
         {
             InitializeComponent();
         }
 
+        public AddCarForm(DataGridView gridview)
+        {
+            InitializeComponent();
+            carGridView = gridview;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             MyDbContext db = new MyDbContext();
+            mainForm form = new mainForm();
 
             var car = new Vehicle
             {
@@ -31,8 +40,9 @@ namespace car_rental_management
             db.Vehicles.Add(car);
             db.SaveChanges();
 
-            mainForm form = new mainForm();
-            form.RefreshForm();
+            var vehicles = db.Vehicles.ToList();
+            BindingSource vehicleSource = new BindingSource(vehicles, null);
+            carGridView.DataSource = vehicleSource;
 
             Close();
         }

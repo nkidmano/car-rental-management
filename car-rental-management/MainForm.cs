@@ -21,12 +21,6 @@ namespace car_rental_management
             InitializeComponent();
         }
 
-        public void RefreshForm()
-        {
-            carGridView.Refresh();
-            carGridView.Invalidate();
-        }
-
         private void mainForm_Load(object sender, EventArgs e)
         {
 
@@ -150,22 +144,41 @@ namespace car_rental_management
 
         }
 
+        public void RefreshBookingForm()
+        {
+            var bookings = db.Bookings.ToList();
+            BindingSource carHiredsource = new BindingSource(bookings, null);
+            carHiredGridView.DataSource = carHiredsource;
+        }
+        public void RefreshCustomerForm()
+        {
+            var customers = db.Customers.ToList();
+            BindingSource customerSource = new BindingSource(customers, null);
+            customerGridView.DataSource = customerSource;
+        }
+        public void RefreshVehicleForm()
+        {
+            var vehicles = db.Vehicles.ToList();
+            BindingSource vehicleSource = new BindingSource(vehicles, null);
+            carGridView.DataSource = vehicleSource;
+        }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            new CarRegisterForm().Show();
+            CarRegisterForm carRegisterForm = new CarRegisterForm(carHiredGridView);
+            carRegisterForm.Show();
         }
 
         private void btnNewCar_Click(object sender, EventArgs e)
         {
-            new AddCarForm().Show();
+            AddCarForm addCarForm = new AddCarForm(carGridView);
+            addCarForm.Show();
         }
 
         private void btnEditCar_Click(object sender, EventArgs e)
         {
-            EditCarForm editCarForm = new EditCarForm((int)carGridView.CurrentRow.Cells[0].Value);
+            EditCarForm editCarForm = new EditCarForm((int)carGridView.CurrentRow.Cells[0].Value, carGridView);
             editCarForm.Show();
-
-
         }
 
         private void btnRemoveCar_Click(object sender, EventArgs e)
@@ -175,6 +188,8 @@ namespace car_rental_management
 
             db.Vehicles.Remove(carInDB);
             db.SaveChanges();
+
+            RefreshVehicleForm();
         }
 
         private void btnRemoveCustomer_Click(object sender, EventArgs e)
@@ -184,6 +199,8 @@ namespace car_rental_management
 
             db.Customers.Remove(customerInDB);
             db.SaveChanges();
+
+            RefreshCustomerForm();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -194,16 +211,12 @@ namespace car_rental_management
             db.Bookings.Remove(bookingInDB);
             db.SaveChanges();
 
-            var bookings = db.Bookings.ToList();
-
-            BindingSource carHiredsource = new BindingSource(bookings, null);
-
-            carHiredGridView.DataSource = carHiredsource;
+            RefreshBookingForm();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditBookingForm editBookingForm = new EditBookingForm((int)carHiredGridView.CurrentRow.Cells[0].Value);
+            EditBookingForm editBookingForm = new EditBookingForm((int)carHiredGridView.CurrentRow.Cells[0].Value, carHiredGridView);
             editBookingForm.Show();
         }
 

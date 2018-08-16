@@ -15,9 +15,17 @@ namespace car_rental_management
     {
         MyDbContext db = new MyDbContext();
 
+        public DataGridView carHiredGridView { get; set; }
+
         public CarRegisterForm()
         {
             InitializeComponent();
+        }
+
+        public CarRegisterForm(DataGridView gridView)
+        {
+            InitializeComponent();
+            carHiredGridView = gridView;
         }
 
         private void CalculateBookingMoney()
@@ -99,6 +107,10 @@ namespace car_rental_management
  
             db.Invoices.Add(invoice);
             db.SaveChanges();
+
+            var bookings = db.Bookings.ToList();
+            BindingSource carHiredsource = new BindingSource(bookings, null);
+            carHiredGridView.DataSource = carHiredsource;
 
             Close();
         }

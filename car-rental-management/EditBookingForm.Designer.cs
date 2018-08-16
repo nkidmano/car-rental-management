@@ -34,6 +34,8 @@
             this.dateTo = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTotalMoney = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -48,7 +50,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 71);
+            this.label2.Location = new System.Drawing.Point(19, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
@@ -61,18 +63,20 @@
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(153, 20);
             this.dateFrom.TabIndex = 2;
+            this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
             // dateTo
             // 
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTo.Location = new System.Drawing.Point(77, 68);
+            this.dateTo.Location = new System.Drawing.Point(77, 64);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(153, 20);
             this.dateTo.TabIndex = 3;
+            this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(54, 112);
+            this.btnSave.Location = new System.Drawing.Point(51, 137);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 4;
@@ -82,7 +86,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(135, 112);
+            this.btnClose.Location = new System.Drawing.Point(132, 137);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 5;
@@ -90,11 +94,30 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Tiền thuê";
+            // 
+            // txtTotalMoney
+            // 
+            this.txtTotalMoney.Location = new System.Drawing.Point(77, 102);
+            this.txtTotalMoney.Name = "txtTotalMoney";
+            this.txtTotalMoney.ReadOnly = true;
+            this.txtTotalMoney.Size = new System.Drawing.Size(153, 20);
+            this.txtTotalMoney.TabIndex = 7;
+            // 
             // EditBookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 161);
+            this.ClientSize = new System.Drawing.Size(269, 183);
+            this.Controls.Add(this.txtTotalMoney);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dateTo);
@@ -116,5 +139,7 @@
         private System.Windows.Forms.DateTimePicker dateTo;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTotalMoney;
     }
 }
