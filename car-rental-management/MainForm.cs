@@ -177,7 +177,7 @@ namespace car_rental_management
 
         private void btnEditCar_Click(object sender, EventArgs e)
         {
-            EditCarForm editCarForm = new EditCarForm((int)carGridView.CurrentRow.Cells[0].Value, carGridView);
+            EditCarForm editCarForm = new EditCarForm((int)carGridView.CurrentRow.Cells[0].Value, carGridView, carHiredGridView);
             editCarForm.Show();
         }
 
@@ -222,7 +222,7 @@ namespace car_rental_management
 
         private void btnEditCustomer_Click(object sender, EventArgs e)
         {
-            EditCustomerForm editCustomerForm = new EditCustomerForm((int)customerGridView.CurrentRow.Cells[0].Value);
+            EditCustomerForm editCustomerForm = new EditCustomerForm((int)customerGridView.CurrentRow.Cells[0].Value, customerGridView, carHiredGridView);
             editCustomerForm.Show();
         }
 

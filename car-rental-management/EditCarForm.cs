@@ -18,18 +18,22 @@ namespace car_rental_management
 
         public DataGridView carGridView { get; set; }
 
+        public DataGridView carHiredGridView { get; set; }
+
         public EditCarForm()
         {
             InitializeComponent();
         }
 
-        public EditCarForm(int id, DataGridView gridview)
+        public EditCarForm(int id, DataGridView gridview1, DataGridView gridview2)
         {
             InitializeComponent();
 
             carId = id;
 
-            carGridView = gridview;
+            carGridView = gridview1;
+
+            carHiredGridView = gridview2;
 
             var carInBD = db.Vehicles.SingleOrDefault(c => c.Id == carId);
 
@@ -52,6 +56,10 @@ namespace car_rental_management
             var vehicles = db.Vehicles.ToList();
             BindingSource vehicleSource = new BindingSource(vehicles, null);
             carGridView.DataSource = vehicleSource;
+
+            var bookings = db.Bookings.ToList();
+            BindingSource carHiredsource = new BindingSource(bookings, null);
+            carHiredGridView.DataSource = carHiredsource;
 
             Close();
         }

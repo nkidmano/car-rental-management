@@ -13,16 +13,25 @@ namespace car_rental_management
     public partial class EditCustomerForm : Form
     {
         public int customerId { get; set; }
+
         MyDbContext db = new MyDbContext();
+
+        public DataGridView customerGridView { get; set; }
+
+        public DataGridView carHiredGridView { get; set; }
 
         public EditCustomerForm()
         {
             InitializeComponent();
         }
 
-        public EditCustomerForm(int id)
+        public EditCustomerForm(int id, DataGridView gridview1, DataGridView gridview2)
         {
             InitializeComponent();
+
+            customerGridView = gridview1;
+
+            carHiredGridView = gridview2;
 
             customerId = id;
             var customerInDB = db.Customers.SingleOrDefault(c => c.Id == customerId);
@@ -48,6 +57,15 @@ namespace car_rental_management
             customerInDB.Address = txtAddress.Text;
 
             db.SaveChanges();
+
+            var customers = db.Customers.ToList();
+            BindingSource customerSource = new BindingSource(customers, null);
+            customerGridView.DataSource = customerSource;
+
+            //var bookings = db.Bookings.ToList();
+            //BindingSource carHiredsource = new BindingSource(bookings, null);
+            //carHiredGridView.DataSource = carHiredsource;
+
             Close();
         }
 
