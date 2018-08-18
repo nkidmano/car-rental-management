@@ -51,7 +51,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTotalMoney = new System.Windows.Forms.TextBox();
-            this.btnTesting = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -259,22 +258,11 @@
             this.txtTotalMoney.Size = new System.Drawing.Size(200, 20);
             this.txtTotalMoney.TabIndex = 23;
             // 
-            // btnTesting
-            // 
-            this.btnTesting.Location = new System.Drawing.Point(73, 289);
-            this.btnTesting.Name = "btnTesting";
-            this.btnTesting.Size = new System.Drawing.Size(75, 23);
-            this.btnTesting.TabIndex = 24;
-            this.btnTesting.Text = "Testing";
-            this.btnTesting.UseVisualStyleBackColor = true;
-            this.btnTesting.Click += new System.EventHandler(this.btnTesting_Click);
-            // 
             // CarRegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 329);
-            this.Controls.Add(this.btnTesting);
             this.Controls.Add(this.txtTotalMoney);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -331,6 +319,5 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtTotalMoney;
-        private System.Windows.Forms.Button btnTesting;
     }
 }

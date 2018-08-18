@@ -62,9 +62,10 @@ namespace car_rental_management
             BindingSource customerSource = new BindingSource(customers, null);
             customerGridView.DataSource = customerSource;
 
-            //var bookings = db.Bookings.ToList();
-            //BindingSource carHiredsource = new BindingSource(bookings, null);
-            //carHiredGridView.DataSource = carHiredsource;
+            var bookings = db.Bookings.ToList();
+            BindingSource carHiredsource = new BindingSource(bookings, null);
+            carHiredsource.ResetBindings(true);
+            carHiredGridView.DataSource = carHiredsource;
 
             Close();
         }

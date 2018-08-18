@@ -190,6 +190,7 @@ namespace car_rental_management
             db.SaveChanges();
 
             RefreshVehicleForm();
+            RefreshBookingForm();
         }
 
         private void btnRemoveCustomer_Click(object sender, EventArgs e)
@@ -201,6 +202,7 @@ namespace car_rental_management
             db.SaveChanges();
 
             RefreshCustomerForm();
+            RefreshBookingForm();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -231,21 +233,6 @@ namespace car_rental_management
             InvoiceForm invoiceForm = new InvoiceForm((int)carHiredGridView.CurrentRow.Cells[0].Value);
             invoiceForm.Show();
         }
-
-        //MyDbContext db = new MyDbContext();
-
-        //var car = new Vehicle
-        //{
-        //    RegNumber = "5555",
-        //    CurrentMileage = 1000,
-        //};
-
-        //// add, remove, 
-
-        ////var carInDB = db.Vehicles.SingleOrDefault(c => c.Id == 1);
-        ////carInDB.RegNumber = "3%#%#%#s";
-
-        //db.Vehicles.Add(car);
-        //db.SaveChanges();
     }
 }
+    
