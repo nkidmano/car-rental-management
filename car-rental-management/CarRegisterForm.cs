@@ -17,15 +17,18 @@ namespace car_rental_management
 
         public DataGridView carHiredGridView { get; set; }
 
+        public DataGridView customerGridView { get; set; }
+
         public CarRegisterForm()
         {
             InitializeComponent();
         }
 
-        public CarRegisterForm(DataGridView gridView)
+        public CarRegisterForm(DataGridView gridView, DataGridView gridView2)
         {
             InitializeComponent();
             carHiredGridView = gridView;
+            customerGridView = gridView2;
         }
 
         private void CalculateBookingMoney()
@@ -111,6 +114,11 @@ namespace car_rental_management
             var bookings = db.Bookings.ToList();
             BindingSource carHiredsource = new BindingSource(bookings, null);
             carHiredGridView.DataSource = carHiredsource;
+
+            var customers = db.Customers.ToList();
+            BindingSource customerSource = new BindingSource(customers, null);
+            customerSource.ResetBindings(true);
+            customerGridView.DataSource = customerSource;
 
             Close();
         }

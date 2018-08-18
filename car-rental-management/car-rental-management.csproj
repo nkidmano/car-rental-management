@@ -104,9 +104,13 @@
     <Compile Include="Migrations\201807301505307_PopulateCustomersAndVehicles.Designer.cs">
       <DependentUpon>201807301505307_PopulateCustomersAndVehicles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808181729599_UpdateBookingModel.cs" />
-    <Compile Include="Migrations\201808181729599_UpdateBookingModel.Designer.cs">
-      <DependentUpon>201808181729599_UpdateBookingModel.cs</DependentUpon>
+    <Compile Include="Migrations\201808181826118_UpdateCustomerModel.cs" />
+    <Compile Include="Migrations\201808181826118_UpdateCustomerModel.Designer.cs">
+      <DependentUpon>201808181826118_UpdateCustomerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808181827271_UpdateVehicleModel.cs" />
+    <Compile Include="Migrations\201808181827271_UpdateVehicleModel.Designer.cs">
+      <DependentUpon>201808181827271_UpdateVehicleModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\Customer.cs" />
@@ -167,8 +171,11 @@
     <EmbeddedResource Include="Migrations\201807301505307_PopulateCustomersAndVehicles.resx">
       <DependentUpon>201807301505307_PopulateCustomersAndVehicles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808181729599_UpdateBookingModel.resx">
-      <DependentUpon>201808181729599_UpdateBookingModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808181826118_UpdateCustomerModel.resx">
+      <DependentUpon>201808181826118_UpdateCustomerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808181827271_UpdateVehicleModel.resx">
+      <DependentUpon>201808181827271_UpdateVehicleModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

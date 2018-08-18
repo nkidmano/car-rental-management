@@ -165,7 +165,7 @@ namespace car_rental_management
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            CarRegisterForm carRegisterForm = new CarRegisterForm(carHiredGridView);
+            CarRegisterForm carRegisterForm = new CarRegisterForm(carHiredGridView, customerGridView);
             carRegisterForm.Show();
         }
 
